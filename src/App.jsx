@@ -46,13 +46,15 @@ function App() {
           </button>
         </div>
         <div className="dados w-[400px] mt-10 flex justify-center items-center">
-          <ul className='text-left border-2 px-4 py-3 rounded-md bg-white border-none text-[#91CAE3]'>
-            <li>Cep: {consulta.cep}</li>
-            <li>Estado: {consulta.estado} - {consulta.uf}</li>
-            <li>Cidade: {consulta.localidade}</li>
-            <li>Bairro: {consulta.bairro}</li>
-            <li>{consulta.logradouro}</li>
-          </ul>
+          {Object.keys(consulta).length > 0 && (
+            <ul className='text-left border-2 px-4 py-3 rounded-md bg-white border-none text-[#91CAE3]'>
+              <li>Cep: {consulta.cep}</li>
+              <li>Estado: {consulta.estado} - {consulta.uf}</li>
+              <li>Cidade: {consulta.localidade}</li>
+              <li>Bairro: {consulta.bairro}</li>
+              <li>{consulta.logradouro}</li>
+            </ul>
+          )}
         </div>
       </div>
       <div className="ladoDiretiro w-[50%] flex justify-center items-center h-screen bg-white">
