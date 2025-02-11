@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="flex justify-center items-center w-full h-screen">
-      <div className="ladoEsquerdo w-[50%] flex flex-col justify-center items-center h-screen bg-slate-200 ">
+      <div className="ladoEsquerdo w-full flex flex-col justify-center items-center h-screen bg-slate-200 ">
         <div className="w-[400px] flex flex-col justify-center items-center ">
           <h1 className='text-3xl text-black font-semibold'>CONSULTAR CEP</h1>
 
@@ -57,7 +57,8 @@ function App() {
           )}
         </div>
       </div>
-      <div className="ladoDiretiro w-[50%] flex justify-center items-center h-screen bg-white hidden sm:inline">
+      
+      <div className="ladoDiretiro w-full flex justify-center items-center h-screen bg-white hidden sm:inline-flex">
         <img src={teste} alt="" />
       </div>
     </div>
