@@ -39,7 +39,7 @@ function App() {
             type="text" 
           />
           <button 
-            className='bg-black text-white px-4 py-1 rounded-xl mt-5'
+            className='bg-black text-white px-4 py-1 rounded-xl mt-5 hover:bg-slate-700 cursor-pointer'
             onClick={consultarCep}
             >
             Consultar
