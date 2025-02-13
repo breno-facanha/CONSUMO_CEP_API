@@ -1,9 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import teste from './assets/Location.gif'
 
 function App() {
   const [cep, setCep] = useState('')
   const [consulta, setConsulta ] = useState({})
+
+  const validateCep = (value) => {
+    const regex = /^\d{5}-\d{3}$/;
+    return regex.test(value);
+  };
   
   async function consultarCep(){
     if(cep === ''){
@@ -31,12 +36,14 @@ function App() {
       <div className="ladoEsquerdo w-full flex flex-col justify-center items-center h-screen bg-slate-200 ">
         <div className="w-[400px] flex flex-col justify-center items-center ">
           <h1 className='text-3xl text-black font-semibold'>CONSULTAR CEP</h1>
-
+        
           <input
-            onChange={ (event) => setCep(event.target.value)}
+            onChange={ (event) => setCep(event.target.value.replace(/\D/g, '').replace(/(\d{5})(\d{3})/, "$1-$2"))}
             value={cep}
             className='bg-red-50 py-1 px-4 mt-8 rounded-xl text-center text-slate-500'  
             type="text" 
+            pattern="^\d{5}-\d{3}$"
+            maxLength={8}
           />
           <button 
             className='bg-black text-white px-4 py-1 rounded-xl mt-5 hover:bg-slate-700 cursor-pointer'
